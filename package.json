@@ -1,6 +1,6 @@
 {
   "name": "@jworkshop/canvasanimator",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description":
     "A canvas react UI component integrated with animation feature.",
   "author": "jworkshop <john.joydesign@gmail.com>",
@@ -11,14 +11,14 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@jworkshop/canvas": "^0.0.5",
+    "@jworkshop/canvas": "^0.0.6",
     "@jworkshop/animator": "^0.0.5",
     "prop-types": "^15.6.1"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-preset-env": "^1.6.0",
-    "eslint": "^4.7.2"
+    "eslint": "^4.19.1"
   },
   "main": "./lib/index.js",
   "scripts": {
