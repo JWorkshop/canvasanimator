@@ -3,9 +3,13 @@ import Canvas from "@jworkshop/canvas";
 import Animator from "@jworkshop/animator";
 
 class CanvasAnimator extends Canvas {
-  constructor(props) {
+  constructor({ animator, animate, onPause, onResume, ...props }) {
     super(props);
 
+    this.animator = animator;
+    this.animate = animate;
+    this.onPause = onPause;
+    this.onResume = onResume;
     this.removeAnimation = null;
     this.removePause = null;
     this.removeResume = null;

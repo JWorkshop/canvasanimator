@@ -1,6 +1,6 @@
 {
   "name": "@jworkshop/canvasanimator",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description":
     "A canvas react UI component integrated with animation feature.",
   "author": "jworkshop <john.joydesign@gmail.com>",
@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.0",
     "eslint": "^4.19.1"
   },
@@ -25,12 +26,16 @@
     "build": "babel src -d lib --copy-files"
   },
   "babel": {
-    "presets": ["env"]
+    "presets": ["env"],
+    "plugins": ["transform-object-rest-spread"]
   },
   "eslintConfig": {
     "parserOptions": {
       "ecmaVersion": 8,
-      "sourceType": "module"
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "experimentalObjectRestSpread": true
+      }
     },
     "env": {
       "browser": true,
