@@ -3,13 +3,9 @@ import Canvas from "@jworkshop/canvas";
 import Animator from "@jworkshop/animator";
 
 class CanvasAnimator extends Canvas {
-  constructor({ animator, animate, onPause, onResume, ...props }) {
+  constructor(props) {
     super(props);
 
-    this.animator = animator;
-    this.animate = animate;
-    this.onPause = onPause;
-    this.onResume = onResume;
     this.removeAnimation = null;
     this.removePause = null;
     this.removeResume = null;
@@ -18,35 +14,25 @@ class CanvasAnimator extends Canvas {
   componentDidMount() {
     this._mount();
 
-    const { animator, animate, onPause, onResume } = this.props;
+    const { props } = this;
+    const { animator } = props;
 
     this.removeAnimation = animator.add(timeDiff => {
       const { width, height } = this.state;
       const context = this.getContext();
 
-      animate(context, width, height, timeDiff);
+      props.animate(context, width, height, timeDiff);
     });
-
-    this.removePause = animator.onPause(onPause);
-    this.removeResume = animator.onResume(onResume);
+    this.removePause = animator.onPause(props.onPause);
+    this.removeResume = animator.onResume(props.onResume);
   }
 
   componentWillUnmount() {
     this._unmount();
 
-    const { removeAnimation, removePause, removeResume } = this;
-
-    if (removeAnimation) {
-      removeAnimation();
-    }
-
-    if (removePause) {
-      removePause();
-    }
-
-    if (removeResume) {
-      removeResume();
-    }
+    this.removeAnimation();
+    this.removePause();
+    this.removeResume();
   }
 
   /** Pause the animation. */

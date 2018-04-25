@@ -1,6 +1,6 @@
 {
   "name": "@jworkshop/canvasanimator",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description":
     "A canvas react UI component integrated with animation feature.",
   "author": "jworkshop <john.joydesign@gmail.com>",
@@ -11,7 +11,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@jworkshop/canvas": "^0.0.6",
+    "@jworkshop/canvas": "^0.0.8",
     "@jworkshop/animator": "^0.0.5",
     "prop-types": "^15.6.1"
   },
